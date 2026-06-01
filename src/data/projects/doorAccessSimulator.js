@@ -31,7 +31,10 @@ const doorAccessSimulator = {
 
   github: "https://github.com/beaudougan1/STM32-Door-Access-Simulator",
 
-  demo: "https://youtube.com/shorts/Id3XtuauKOA?feature=share",
+  demo: "https://youtube.com/shorts/Id3XtuauKOA",
+
+  youtubeEmbed:
+    "https://www.youtube.com/embed/Id3XtuauKOA",
 
   description:
     "An embedded systems project that simulated keypad-controlled door access using an STM32 Nucleo board, servo motor, LEDs, buzzer feedback, and a 4x4 matrix keypad.",
