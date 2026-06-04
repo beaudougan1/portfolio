@@ -17,14 +17,14 @@ function ProjectCard({ project, featured = false }) {
       <Link
         to={`/projects/${project.slug}`}
         className={`block overflow-hidden bg-slate-800 ${
-          featured ? "min-h-[320px]" : "aspect-video"
+          featured ? "h-[360px] lg:h-auto" : "aspect-video"
         }`}
       >
         {project.video ? (
           <video
             src={project.video}
             controls
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
           />
         ) : project.image ? (
           <img
@@ -80,10 +80,16 @@ function ProjectCard({ project, featured = false }) {
         </div>
 
         <ul className="mt-6 space-y-2 text-sm text-slate-300">
-          {project.achievements.map((item) => (
+          {project.achievements.slice(0, 4).map((item) => (
             <li key={item}>• {item}</li>
           ))}
         </ul>
+
+        {project.achievements.length > 4 && (
+          <p className="mt-3 text-sm text-slate-500">
+            + {project.achievements.length - 4} more on project page
+          </p>
+        )}
 
         <div className="mt-6 flex flex-wrap gap-3">
           <Link

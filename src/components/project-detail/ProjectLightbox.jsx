@@ -1,16 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 function ProjectLightbox({
   images,
   selectedImageIndex,
   selectedImage,
-  isZoomed,
-  setIsZoomed,
   closeImage,
   showPreviousImage,
   showNextImage,
 }) {
+  const [zoomLevel, setZoomLevel] = useState(0);
+  const scrollContainerRef = useRef(null);
+
   const selectedImageSrc = selectedImage?.src || null;
   const selectedImageCaption = selectedImage?.caption || "";
 
@@ -30,7 +31,65 @@ function ProjectLightbox({
     };
   }, [selectedImageSrc, closeImage, showPreviousImage, showNextImage]);
 
+  useEffect(() => {
+    setZoomLevel(0);
+
+    const container = scrollContainerRef.current;
+
+    if (!container || !selectedImageSrc) return;
+
+    container.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [selectedImageSrc]);
+
+  const handleImageClick = (event) => {
+    event.stopPropagation();
+
+    const container = scrollContainerRef.current;
+    const image = event.currentTarget;
+    const rect = image.getBoundingClientRect();
+
+    const clickRatioX = (event.clientX - rect.left) / rect.width;
+    const clickRatioY = (event.clientY - rect.top) / rect.height;
+
+    const nextZoomLevel = zoomLevel === 2 ? 0 : zoomLevel + 1;
+
+    setZoomLevel(nextZoomLevel);
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (!container || nextZoomLevel === 0) {
+          container?.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "instant",
+          });
+          return;
+        }
+
+        const scrollWidth = container.scrollWidth - container.clientWidth;
+        const scrollHeight = container.scrollHeight - container.clientHeight;
+
+        container.scrollTo({
+          left: scrollWidth * clickRatioX,
+          top: scrollHeight * clickRatioY,
+          behavior: "instant",
+        });
+      });
+    });
+  };
+
   if (!selectedImageSrc) return null;
+
+  const imageClassName =
+    zoomLevel === 0
+      ? "max-h-[78vh] max-w-[95vw] cursor-zoom-in rounded-xl object-contain transition"
+      : zoomLevel === 1
+        ? "h-auto max-h-none w-[140vw] max-w-none cursor-zoom-in rounded-xl object-contain transition"
+        : "h-auto max-h-none w-[220vw] max-w-none cursor-zoom-out rounded-xl object-contain transition";
 
   return (
     <div className="fixed inset-0 z-[100] bg-black/90" onClick={closeImage}>
@@ -58,6 +117,7 @@ function ProjectLightbox({
             type="button"
             onClick={(event) => {
               event.stopPropagation();
+              setZoomLevel(0);
               showPreviousImage();
             }}
             className="fixed left-5 top-1/2 z-[110] -translate-y-1/2 rounded-full border border-slate-700 bg-slate-900 p-3 text-white transition hover:border-blue-400"
@@ -70,6 +130,7 @@ function ProjectLightbox({
             type="button"
             onClick={(event) => {
               event.stopPropagation();
+              setZoomLevel(0);
               showNextImage();
             }}
             className="fixed right-5 top-1/2 z-[110] -translate-y-1/2 rounded-full border border-slate-700 bg-slate-900 p-3 text-white transition hover:border-blue-400"
@@ -89,26 +150,23 @@ function ProjectLightbox({
         </div>
       )}
 
-      <div className="h-screen overflow-auto px-6 pb-28 pt-20">
+      <div
+        ref={scrollContainerRef}
+        className="h-screen overflow-auto px-6 pb-28 pt-20"
+      >
         <div
           className={
-            isZoomed
-              ? "flex min-h-max min-w-max justify-center"
-              : "flex min-h-full items-center justify-center"
+            zoomLevel === 0
+              ? "flex min-h-full items-center justify-center"
+              : "flex min-h-max min-w-max justify-center"
           }
         >
           <img
             src={selectedImageSrc}
             alt={selectedImageCaption || "Full size project preview"}
-            onClick={(event) => {
-              event.stopPropagation();
-              setIsZoomed(!isZoomed);
-            }}
-            className={
-              isZoomed
-                ? "max-h-none max-w-none cursor-zoom-out rounded-xl object-contain transition"
-                : "max-h-[78vh] max-w-[95vw] cursor-zoom-in rounded-xl object-contain transition"
-            }
+            onClick={handleImageClick}
+            draggable={false}
+            className={imageClassName}
           />
         </div>
       </div>

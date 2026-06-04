@@ -6,18 +6,12 @@ function Projects() {
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const inboxPilot = projects.find(
-    (project) => project.slug === "inbox-pilot"
-  );
-
-  const robotProject = projects.find(
-    (project) => project.slug === "qualcomm-robot"
+  const featuredProjects = projects.filter(
+    (project) => project.featured
   );
 
   const remainingProjects = projects.filter(
-    (project) =>
-      project.slug !== "inbox-pilot" &&
-      project.slug !== "qualcomm-robot"
+    (project) => !project.featured
   );
 
   const categories = [
@@ -62,19 +56,13 @@ function Projects() {
       </div>
 
       <div className="space-y-10">
-        {inboxPilot && (
+        {featuredProjects.map((project) => (
           <ProjectCard
-            project={inboxPilot}
+            key={project.slug}
+            project={project}
             featured
           />
-        )}
-
-        {robotProject && (
-          <ProjectCard
-            project={robotProject}
-            featured
-          />
-        )}
+        ))}
       </div>
 
       <div className="mt-24">

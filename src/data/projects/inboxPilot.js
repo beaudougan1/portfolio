@@ -7,7 +7,7 @@ const inboxPilot = {
 
   category: "AI / Full-Stack",
 
-  featured: true,
+  featured: false,
 
   image: "/projects/inbox-pilot/hero.png",
 
@@ -63,7 +63,7 @@ const inboxPilot = {
 
   video: "",
 
-  github: "",
+  github: "https://github.com/beaudougan1/InboxPilot",
 
   demo: "",
 

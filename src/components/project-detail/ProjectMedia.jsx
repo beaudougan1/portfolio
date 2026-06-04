@@ -3,7 +3,6 @@ import ProjectLightbox from "./ProjectLightbox";
 
 function ProjectMedia({ project }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-  const [isZoomed, setIsZoomed] = useState(false);
 
   const hasMainImage = Boolean(project.image);
   const hasGallery = project.gallery && project.gallery.length > 0;
@@ -61,26 +60,22 @@ function ProjectMedia({ project }) {
     const index = lightboxImages.findIndex((image) => image.src === imageSrc);
 
     setSelectedImageIndex(index);
-    setIsZoomed(false);
   };
 
   const closeImage = useCallback(() => {
     setSelectedImageIndex(null);
-    setIsZoomed(false);
   }, []);
 
   const showPreviousImage = useCallback(() => {
     setSelectedImageIndex((currentIndex) =>
       currentIndex === 0 ? lightboxImages.length - 1 : currentIndex - 1
     );
-    setIsZoomed(false);
   }, [lightboxImages.length]);
 
   const showNextImage = useCallback(() => {
     setSelectedImageIndex((currentIndex) =>
       currentIndex === lightboxImages.length - 1 ? 0 : currentIndex + 1
     );
-    setIsZoomed(false);
   }, [lightboxImages.length]);
 
   if (!hasMainImage && !hasGallery && !hasYouTube && !project.architectureDiagram) {
@@ -197,8 +192,6 @@ function ProjectMedia({ project }) {
         images={lightboxImages}
         selectedImageIndex={selectedImageIndex}
         selectedImage={selectedImage}
-        isZoomed={isZoomed}
-        setIsZoomed={setIsZoomed}
         closeImage={closeImage}
         showPreviousImage={showPreviousImage}
         showNextImage={showNextImage}

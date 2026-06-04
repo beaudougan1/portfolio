@@ -38,7 +38,7 @@ function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <p className="mb-4 text-blue-400">
-            Software Engineer • AI • Machine Learning • Full-Stack Development
+            Software Engineer • AI • Embedded Systems • Full-Stack Development
           </p>
 
           <h1 className="mb-6 text-5xl font-bold leading-tight md:text-7xl">
@@ -94,7 +94,7 @@ function Hero() {
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
               ["B.S.", "Software Engineering"],
-              ["AI, ML, Robotics", "Projects & Applications"],
+              ["AI • Full-Stack • Embedded Systems", "Projects & Applications"],
               ["Full-Stack", "React, APIs, PostgreSQL"],
             ].map(([title, subtitle]) => (
               <motion.div

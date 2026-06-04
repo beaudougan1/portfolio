@@ -4,11 +4,13 @@ import fraudDetection from "./fraudDetection";
 import echoesForgotten from "./echoesForgotten";
 import doorAccessSimulator from "./doorAccessSimulator";
 import canvasCalendar from "./canvasCalendar";
+import orderOS from "./orderOS";
 
 export const projects = [
-  inboxPilot,
+  orderOS,
   qualcommRobot,
   fraudDetection,
+  inboxPilot,
   doorAccessSimulator,
   echoesForgotten,
   canvasCalendar,
