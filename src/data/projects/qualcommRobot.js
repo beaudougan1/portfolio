@@ -64,7 +64,7 @@ const qualcommRobot = {
   achievements: [
     "Selected as part of a four-person senior design team",
     "Built voice activation using keyword detection and speech recognition",
-    "Integrated object detection, obstacle avoidance, and face tracking",
+    "Integrated object detection, obstacle avoidance, and LiDAR odometry for real-time navigation",
     "Connected robot functionality to an iOS application through Bluetooth",
   ],
 
