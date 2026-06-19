@@ -94,7 +94,7 @@ function Hero() {
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
               ["B.S.", "Software Engineering"],
-              ["AI • Full-Stack • Embedded Systems", "Projects & Applications"],
+              ["AI • Architecture • Embedded Systems", "Projects & Applications"],
               ["Full-Stack", "React, APIs, PostgreSQL"],
             ].map(([title, subtitle]) => (
               <motion.div
