@@ -38,7 +38,7 @@ function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <p className="mb-4 text-blue-400">
-            Software Engineer • AI • Embedded Systems • Full-Stack Development
+            Software Engineer • Embedded Systems • AI • Full-Stack Development
           </p>
 
           <h1 className="mb-6 text-5xl font-bold leading-tight md:text-7xl">
@@ -47,8 +47,8 @@ function Hero() {
 
           <p className="max-w-3xl text-xl leading-8 text-slate-300">
             Cum Laude Software Engineering graduate from California State
-            University San Marcos with experience building AI-powered
-            applications, machine learning systems, robotics platforms,
+            University San Marcos withexperience building embedded systems, 
+            robotics platforms, AI-powered applications, machine learning systems,
             and full-stack software solutions.
           </p>
 

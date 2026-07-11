@@ -7,8 +7,8 @@ import canvasCalendar from "./canvasCalendar";
 import orderOS from "./orderOS";
 
 export const projects = [
-  orderOS,
   qualcommRobot,
+  orderOS,
   fraudDetection,
   inboxPilot,
   doorAccessSimulator,
