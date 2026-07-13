@@ -48,7 +48,7 @@ const qualcommRobot = {
     "A voice-activated autonomous guide robot built with a Rubik Pi 3 development board and robotics platform.",
 
   overview:
-    "This senior design capstone project was sponsored by Qualcomm and developed by a four-person team. The project focused on building a voice-activated guide robot capable of real-time navigation, object detection, obstacle avoidance, face tracking, Bluetooth communication with an iOS application, keyword detection, and text-to-speech responses.",
+    "This senior design capstone project was sponsored by Qualcomm and developed by a four-person team. The project focused on building a voice-activated guide robot capable of real-time navigation, obstacle avoidance, LiDAR odometry, Bluetooth communication with an iOS application, keyword detection, and text-to-speech responses.",
 
   technologies: [
     "Python",
@@ -74,6 +74,7 @@ const qualcommRobot = {
     "Integrating hardware and software components into one working system",
     "Handling real-time navigation and obstacle avoidance",
     "Coordinating development across a four-person team using SCRUM",
+    "Researching working with new systems I had no prior experience with, including ROS2, LiDAR, and Ubuntu",
     "Working on a new development board with limited documentation and community support",
   ],
 
@@ -81,7 +82,7 @@ const qualcommRobot = {
     "Strengthened robotics and embedded systems development skills",
     "Gained experience working with hardware constraints",
     "Improved team collaboration and technical communication",
-    "Working on a real-world project sponsored by Qualcomm provided valuable industry experience",
+    "Working closely with a project manager at Qualcomm on a real-world project provided valuable industry experience",
   ],
 
   futureImprovements: [
