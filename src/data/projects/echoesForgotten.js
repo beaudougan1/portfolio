@@ -33,6 +33,8 @@ const echoesForgotten = {
   video: "",
   github: "https://github.com/beaudougan1/Echoes-Of-The-Forgotten",
   demo: "",
+  documentation: "/projects/echoes-forgotten/Project Report_ Echoes Of The Forgotten Remastered.pdf",
+
 
   description:
     "A text-based RPG game with custom fonts, dynamic audio, and multiple software architecture patterns.",

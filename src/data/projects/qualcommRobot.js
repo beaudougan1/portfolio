@@ -38,9 +38,11 @@ const qualcommRobot = {
   youtubeEmbed:
     "https://www.youtube.com/embed/s65I-PJ3e-8",
 
-  github: "https://github.com/montse-jara/wave_rover",
+  github: "https://github.com/beaudougan1/AutonomousGuideRobot",
 
   demo: "https://youtu.be/s65I-PJ3e-8",
+
+  documentation: "/projects/qualcomm-robot/Software Engineering Capstone Report Version 5.0.pdf",
 
   description:
     "A voice-activated autonomous guide robot built with a Rubik Pi 3 development board and robotics platform.",

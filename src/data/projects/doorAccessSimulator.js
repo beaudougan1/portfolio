@@ -7,7 +7,7 @@ const doorAccessSimulator = {
 
   category: "Embedded Systems",
 
-  featured: false,
+  featured: true,
 
   image: "/projects/doorlock/hero.jpg",
 
@@ -33,6 +33,8 @@ const doorAccessSimulator = {
 
   demo: "https://youtube.com/shorts/Id3XtuauKOA",
 
+  documentation: "/projects/doorlock/CS435 Final Report.pdf",
+  
   youtubeEmbed:
     "https://www.youtube.com/embed/Id3XtuauKOA",
 

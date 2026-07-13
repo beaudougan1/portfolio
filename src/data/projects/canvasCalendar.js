@@ -39,6 +39,8 @@ const canvasCalendar = {
   github: "https://github.com/beaudougan1/Better-Canvas-Calendar",
   demo: "",
 
+  documentation: "/projects/canvas-calendar/SE 370 - Software Requirements Specification.pdf",
+
   description:
     "A calendar application that uses student class information from the Canvas REST API and displays it in a GUI calendar.",
 

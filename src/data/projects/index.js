@@ -8,10 +8,10 @@ import orderOS from "./orderOS";
 
 export const projects = [
   qualcommRobot,
-  orderOS,
-  fraudDetection,
-  inboxPilot,
   doorAccessSimulator,
+  //orderOS,
+  fraudDetection,
+  //inboxPilot,
   echoesForgotten,
   canvasCalendar,
 ];

@@ -59,7 +59,7 @@ function Skills() {
             "scikit-learn",
             "JUnit",
             "ROS2",
-            "React",
+            //"React",
           ]}
         />
 
@@ -69,8 +69,8 @@ function Skills() {
             "Git",
             "AWS",
             "Jenkins",
-            "PostgreSQL",
-            "Unix",
+            //"PostgreSQL",
+            "Ubuntu",
             "VS Code",
             "IntelliJ",
             "Eclipse",
@@ -80,11 +80,12 @@ function Skills() {
         <SkillCategory
           title="Concepts"
           skills={[
+            "Robotics",
             "Machine Learning",
             "REST APIs",
             "Software Architecture",
             "Software Testing",
-            "Database Systems",
+            //"Database Systems",
             "SCRUM",
             "Object-Oriented Design",
           ]}

@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
+import { FileText } from "lucide-react";
 
 function ProjectHeader({ project }) {
   return (
@@ -22,7 +23,7 @@ function ProjectHeader({ project }) {
         {project.description}
       </p>
 
-      {(project.github || project.demo) && (
+      {(project.github || project.demo || project.documentation) && (
         <div className="mt-8 flex flex-wrap gap-4">
           {project.github && (
             <a
@@ -36,6 +37,18 @@ function ProjectHeader({ project }) {
             </a>
           )}
 
+          {project.documentation && (
+           <a
+            href={project.documentation}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-700 px-5 py-3 transition hover:border-blue-400"
+          >
+            <FileText size={18} />
+            Technical Report
+          </a>
+          )}
+
           {project.demo && (
             <a
               href={project.demo}
@@ -47,6 +60,7 @@ function ProjectHeader({ project }) {
               Watch Demo
             </a>
           )}
+
         </div>
       )}
     </section>
