@@ -38,7 +38,7 @@ function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <p className="mb-4 text-blue-400">
-            Software Engineer • Embedded Systems • AI • Full-Stack Development
+            Software Engineer • Embedded Systems • AI • Robotics
           </p>
 
           <h1 className="mb-6 text-5xl font-bold leading-tight md:text-7xl">
@@ -48,8 +48,7 @@ function Hero() {
           <p className="max-w-3xl text-xl leading-8 text-slate-300">
             Cum Laude Software Engineering graduate from California State
             University San Marcos withexperience building embedded systems, 
-            robotics platforms, AI-powered applications, machine learning systems,
-            and full-stack software solutions.
+            robotics platforms, AI-powered applications, and machine learning systems.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -95,7 +94,7 @@ function Hero() {
             {[
               ["B.S.", "Software Engineering"],
               ["AI • Architecture • Embedded Systems", "Projects & Applications"],
-              ["Full-Stack", "React, APIs, PostgreSQL"],
+              ["Robotics", "ROS2, LiDAR, Navigation, SLAM"],
             ].map(([title, subtitle]) => (
               <motion.div
                 key={title}
